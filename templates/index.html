@@ -10,6 +10,7 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -24,7 +25,7 @@
 
 
         <script type="text/javascript">
-            var host = "192.168.0.4";
+            var host = "192.168.0.13";
             var port = 9001;
             var mqtt;
             //callback함수 - 접속이 완료된 후 호출되는 함수
@@ -138,7 +139,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/1.jpg" alt="..."/></button>
+                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/washer.png" alt="..."/></button>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Threads</div>
                                 <div class="portfolio-caption-subheading text-muted">Illustration</div>
@@ -148,50 +149,28 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 2-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/2.jpg" alt="..."/></button>
+                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/dryer.png" alt="..."/></button>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                                <div class="portfolio-caption-heading">건조기</div>
+<!--                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>-->
+                                 <form>
+                                    <input type="button" id="dry_up" value="UP" onclick="sendMsg('dry up')">
+                                    <input type="button" id="dry_down" value="DOWN" onclick="sendMsg('dry down')">
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 3-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/3.jpg" alt="..."/></button>
+                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/closet.png" alt="..."/></button>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/4.jpg" alt="..."/></button>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/5.jpg" alt="..."/></button>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/portfolio/6.jpg" alt="..."/></button>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">옷장</div>
+                                <form>
+                                    <input type="button" id="left" value="왼쪽으로" onclick="sendMsg('left')">
+                                    <input type="button" id="right" value="오른쪽으로" onclick="sendMsg('right')">
+                                    <input type="button" id="stop" value="멈춤" onclick="sendMsg('stop')">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -309,10 +288,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="/static/assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                        <a><img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white" style="width: 100px"/></a>
+                        <a><img src="https://img.shields.io/badge/android-3DDC84?style=flat-square&logo=Android&logoColor=white" style="width: 100px"/></a>
+                        <a><img src="https://img.shields.io/badge/RaspberryPi-A22846?style=flat-square&logo=RaspberryPi&logoColor=white" style="width: 100px"/></a>
+                        <a><img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=Arduino&logoColor=white" style="width: 100px"/></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="/static/assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                        <a><img src="https://img.shields.io/badge/android-3DDC84?style=flat-square&logo=Android&logoColor=white" style="width: 100px"/></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="/static/assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>

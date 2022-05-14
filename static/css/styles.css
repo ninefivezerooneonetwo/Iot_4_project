@@ -11453,6 +11453,8 @@ header.masthead .masthead-heading {
 }
 #portfolio .portfolio-item {
   max-width: 26rem;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
 }
