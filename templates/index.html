@@ -139,23 +139,39 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/washer.png" alt="..."/></button>
+                            <img class="img-fluid" src="/static/assets/img/washer.png" alt="..."/>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">세탁기</div>
+                                <form>
+                                    <input type="button" id="water_height" value="물높이 설정" onclick="sendMsg('')">
+                                    <input type="button" id="washer_on" value="가동" onclick="sendMsg('')">
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 2-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/dryer.png" alt="..."/></button>
+                            <img class="img-fluid" src="/static/assets/img/dryer.png" alt="..."/>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">건조기</div>
 <!--                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>-->
                                  <form>
-                                    <input type="button" id="dry_up" value="UP" onclick="sendMsg('dry up')">
-                                    <input type="button" id="dry_down" value="DOWN" onclick="sendMsg('dry down')">
+                                    <input type="button" id="dry_up" value="높게" onclick="sendMsg('dry up')">
+                                    <input type="button" id="dry_down" value="낮게" onclick="sendMsg('dry down')">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <img class="img-fluid" src="/static/assets/img/curtain.png" alt="..."/>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">커튼</div>
+                                <form>
+                                    <input type="button" id="roll_up" value="열기" onclick="sendMsg('roll_up')">
+                                    <input type="button" id="roll_down" value="닫기" onclick="sendMsg('roll_down')">
                                 </form>
                             </div>
                         </div>
@@ -163,7 +179,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 3-->
                         <div class="portfolio-item">
-                            <button  onclick="sendMsg('left')"><img class="img-fluid" src="/static/assets/img/closet.png" alt="..."/></button>
+                            <img class="img-fluid" src="/static/assets/img/closet.png" alt="..."/>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">옷장</div>
                                 <form>
