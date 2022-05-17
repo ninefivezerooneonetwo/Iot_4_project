@@ -25,7 +25,7 @@
 
 
         <script type="text/javascript">
-            var host = "192.168.0.13";
+            var host = "192.168.35.5";
             var port = 9001;
             var mqtt;
             //callback함수 - 접속이 완료된 후 호출되는 함수
@@ -46,6 +46,17 @@
                 message = new Paho.MQTT.Message(msg);
                 message.destinationName = "iot/step"; //토픽설정
                 //mqtt메시지 보내기 - publish
+                mqtt.send(message);
+            }
+            function sendToWater(msg){
+                message = new Paho.MQTT.Message(msg);
+                message.destinationName = "iot/android/waterHeight";
+                mqtt.send(message);
+            }
+
+            function sendToWashingMachine(msg){
+                message = new Paho.MQTT.Message(msg);
+                message.destinationName = "iot/android/servo";
                 mqtt.send(message);
             }
             //mqtt통신을 관리하기 위한 사용자정의 함수
@@ -140,11 +151,20 @@
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
                             <img class="img-fluid" src="/static/assets/img/washer.png" alt="..."/>
+
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">세탁기</div>
                                 <form>
-                                    <input type="button" id="water_height" value="물높이 설정" onclick="sendMsg('')">
-                                    <input type="button" id="washer_on" value="가동" onclick="sendMsg('')">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">물높이 설정</a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                        <li><a class="dropdown-item" onclick="sendToWater('1')">1단계</a></li>
+                                        <li><a class="dropdown-item" onclick="sendToWater('2')">2단계</a></li>
+                                        <li><a class="dropdown-item" onclick="sendToWater('3')">3단계</a></li>
+                                        <li><a class="dropdown-item" onclick="sendToWater('4')">4단계</a></li>
+                                        <li><a class="dropdown-item" onclick="sendToWater('5')">5단계</a></li>
+                                        <li><a class="dropdown-item" onclick="sendToWater('6')">6단계</a></li>
+                                    </ul>
+                                    <input type="button" id="washer_on" value="가동" onclick="sendToWashingMachine('washing_machine_servo_start')">
                                 </form>
                             </div>
                         </div>
